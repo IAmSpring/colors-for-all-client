@@ -32,7 +32,7 @@ class App extends React.Component {
         `
     };
 
-    fetch('http://localhost:4000/graphql', {
+    fetch('http://colors-for-all-server.herokuapp.com/graphql', {
       method: 'POST',
       body: JSON.stringify(requestBody),
       headers: {
