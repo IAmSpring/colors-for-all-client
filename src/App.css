@@ -22,7 +22,11 @@ li {
 }
 
 .logo {
-    max-height: 40px;
+    max-height: 27px;
+}
+
+.underline {
+    text-decoration: underline;
 }
 
 .container-fluid, .container-sm, .container-md, .container-lg, .container-xl { 

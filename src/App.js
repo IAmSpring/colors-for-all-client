@@ -1,15 +1,13 @@
-import React, { useState } from 'react';
-import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
+import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import './App.css';
 import Navbar from './components/Navbar';
-import Detail from './components/Detail';
-import List from './components/List';
 import Menu from './components/Menu';
-
+import List from './components/List';
+import Detail from './components/Detail';
 
 const columnMargin = {
-    marginTop: '30px'
+  marginTop: '30px'
 }
 
 class App extends React.Component {
@@ -32,7 +30,7 @@ class App extends React.Component {
         `
     };
 
-    fetch('http://colors-for-all-server.herokuapp.com/graphql', {
+    fetch('https://colors-for-all-server.herokuapp.com/graphql', {
       method: 'POST',
       body: JSON.stringify(requestBody),
       headers: {
@@ -61,11 +59,11 @@ class App extends React.Component {
   }
 
   gotoList = () => {
-    this.setState({ colorid: null})
+    this.setState({ colorid: null })
   }
 
   gotoRandom = () => {
-    const index = Math.floor( Math.random() * this.state.colors.length)
+    const index = Math.floor(Math.random() * this.state.colors.length)
     const randColor = this.state.colors[index]._id
     this.setState({ colorid: randColor })
   }
@@ -78,7 +76,9 @@ class App extends React.Component {
           <Navbar />
           <Row>
             <Col sm={3} className="side-nav">
-            <Menu gotoRandom={this.gotoRandom}/>
+              <Menu
+                gotoRandom={this.gotoRandom}
+              />
             </Col>
             <Col sm={9} style={columnMargin}>
               {!this.state.colorid &&

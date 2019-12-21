@@ -1,33 +1,33 @@
 import React from 'react';
 
-const Swatch = ({ color, gotoDetail }) => {
+const SimilarSwatches = ({ color, gotoDetail }) => {
 
-    const featuredStyle = {
-        display: 'block',
-        width: '100%',
-        marginTop: '8px'
+    const liStyle = {
+        width: '100px',
+        marginTop: '10px',
+        margin: '15px'
     }
 
     const cardStyle = {
-        heigth: '324px',
+        heigth: '30px',
         fontSize: '0.8rem',
         padding: '0px!important'
     };
 
     const cardHeaderStyle = {
         background: `#${color.hex}`,
-        height: '300px',
+        height: '69px',
     };
 
     const cardTitle = {
-        height: '50px',
-        lineHeight: '65px',
-        fontSize: '1.5rem'
+        height: '20px',
+        lineHeight: '30px'
     }
 
     return (
-        
-            <div onClick={()=>(gotoDetail && gotoDetail(color._id))} key={color._id} style={featuredStyle}>
+
+        <React.Fragment>
+            <div onClick={() => (gotoDetail && gotoDetail(color._id))} key={color._id} style={liStyle}>
                 <div className="card" style={cardStyle}>
                     <div className="card-header" style={cardHeaderStyle}></div>
                     <div className="">
@@ -35,7 +35,8 @@ const Swatch = ({ color, gotoDetail }) => {
                     </div>
                 </div>
             </div>
+        </React.Fragment>
     )
 }
 
-export default Swatch;
+export default SimilarSwatches;

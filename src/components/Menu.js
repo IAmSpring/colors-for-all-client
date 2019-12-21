@@ -1,7 +1,7 @@
 import React from 'react';
 
 const columnMargin = {
-  marginTop: '30px'
+  marginTop: '40px'
 }
 
 const randomButton = {
@@ -18,23 +18,31 @@ const menuItems = {
   marginTop: '20px'
 }
 
+const liCategory = {
+  paddingBottom: '4px'
+}
 
-const Menu = (props) => (
-  <div style={columnMargin}>
-    <div className="text-center">
-      <button style={randomButton} onClick={props.gotoRandom}>Random Color</button>
-    </div>
-    <ul style={menuItems}>
-      <li>Red</li>
-      <li>Orange</li>
-      <li>Yellow</li>
-      <li>Green</li>
-      <li>Blue</li>
-      <li>Purple</li>
-      <li>Brown</li>
-      <li>Gray</li>
-    </ul>
-  </div>
-)
+class Menu extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      catergories: ['Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Purple', 'Brown', 'Gray']
+    };
+  }
+
+  render() {
+    const categoryItems = this.state.catergories.map((category) =>
+      <li style={liCategory}>{category}</li>
+    );
+    return (
+      <div style={columnMargin}>
+        <div className="text-center">
+          <button style={randomButton} onClick={this.props.gotoRandom}>Random Color</button>
+        </div>
+        <ul style={menuItems}>{categoryItems}</ul>
+      </div>
+    );
+  }
+}
 
 export default Menu;

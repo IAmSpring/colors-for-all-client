@@ -37,7 +37,6 @@ class PaginationTest extends React.Component {
                                 )}
                             </div>
                         </div>
-
                         <Pagination items={this.props.colors} onChangePage={this.onChangePage} />
                     </div>
                 </div>

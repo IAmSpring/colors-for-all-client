@@ -22,6 +22,9 @@ const liStyle = {
     padding: '5px'    
 }
 
+const underlineActive = {
+    textDecoration: 'underline' 
+}
 
 class Pagination extends React.Component {
     constructor(props) {
@@ -125,7 +128,7 @@ class Pagination extends React.Component {
         return (
             <ul className="pagination" style={paginationStyle}>
                 {pager.pages.map((page, index) =>
-                    <li style={liStyle} key={index} className={pager.currentPage === page ? 'active' : ''}>
+                    <li style={liStyle} key={index} className={pager.currentPage === page ? 'active underline' : ''}>
                         <a onClick={() => this.setPage(page)}>{page}</a>
                     </li>
                 )}
