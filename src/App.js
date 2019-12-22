@@ -6,7 +6,7 @@ import Menu from './components/Menu';
 import List from './components/List';
 import Detail from './components/Detail';
 
-const columnMargin = {
+const columnStyle = {
   marginTop: '30px'
 }
 
@@ -45,7 +45,6 @@ class App extends React.Component {
         return res.json();
       })
       .then(resData => {
-        console.log(resData);
         const colors = resData.data.colors;
         this.setState({ colors: colors });
       })
@@ -54,44 +53,43 @@ class App extends React.Component {
       });
   }
 
-  gotoDetail = (colorid) => {
-    this.setState({ colorid: colorid })
+  goToDetail = (colorId) => {
+    this.setState({ colorId: colorId })
   }
 
-  gotoList = () => {
-    this.setState({ colorid: null })
+  goToList = () => {
+    this.setState({ colorId: null })
   }
 
-  gotoRandom = () => {
+  goToRandom = () => {
     const index = Math.floor(Math.random() * this.state.colors.length)
     const randColor = this.state.colors[index]._id
-    this.setState({ colorid: randColor })
+    this.setState({ colorId: randColor })
   }
 
   render() {
-    console.log(List);
+
     return (
       <div className="App">
         <Container fluid>
           <Navbar />
           <Row>
             <Col sm={3} className="side-nav">
-              <Menu
-                gotoRandom={this.gotoRandom}
-              />
+              <Menu goToRandom={this.goToRandom} />
             </Col>
-            <Col sm={9} style={columnMargin}>
-              {!this.state.colorid &&
+            <Col sm={9} style={columnStyle}>
+              {!this.state.colorId &&
                 <List
                   colors={this.state.colors}
-                  gotoDetail={this.gotoDetail}
+                  goToDetail={this.goToDetail}
                 />
               }
-              {this.state.colorid && this.state.colors.length > 0 &&
+              {this.state.colorId && this.state.colors.length > 0 &&
                 <Detail
                   colors={this.state.colors}
-                  colorid={this.state.colorid}
-                  gotoList={this.gotoList}
+                  colorId={this.state.colorId}
+                  goToDetail={this.goToDetail}
+                  goToList={this.goToList}
                 />
               }
             </Col>

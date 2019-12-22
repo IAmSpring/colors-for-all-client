@@ -1,25 +1,25 @@
 import React from 'react';
 
-const SimilarSwatches = ({ color, gotoDetail }) => {
+const SimilarSwatches = ({ color, goToDetail }) => {
 
     const liStyle = {
         width: '100px',
         marginTop: '10px',
-        margin: '15px'
+        margin: '15px 0px'
     }
 
     const cardStyle = {
         heigth: '30px',
         fontSize: '0.8rem',
         padding: '0px!important'
-    };
+    }
 
     const cardHeaderStyle = {
         background: `#${color.hex}`,
         height: '69px',
-    };
+    }
 
-    const cardTitle = {
+    const cardTitleStyle = {
         height: '20px',
         lineHeight: '30px'
     }
@@ -27,11 +27,11 @@ const SimilarSwatches = ({ color, gotoDetail }) => {
     return (
 
         <React.Fragment>
-            <div onClick={() => (gotoDetail && gotoDetail(color._id))} key={color._id} style={liStyle}>
+            <div onClick={() => (goToDetail && goToDetail(color._id))} key={color._id} style={liStyle}>
                 <div className="card" style={cardStyle}>
                     <div className="card-header" style={cardHeaderStyle}></div>
                     <div className="">
-                        <p className="card-title" style={cardTitle} >#{color.hex}</p>
+                        <p className="card-title" style={cardTitleStyle} >#{color.hex}</p>
                     </div>
                 </div>
             </div>

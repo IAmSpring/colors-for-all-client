@@ -4,10 +4,15 @@ import SimilarSwatches from './SimilarSwatches';
 
 const flexSimilar = {
     display: 'flex',
-    justifyContent: 'center'
+    justifyContent: 'space-between'
 }
 
-const clearButton = {
+const containerStyle = {
+    paddingRight: '0px',
+    paddingLeft: '0px'
+}
+
+const buttonStyle = {
     textAlign: 'center',
     border: '0.5px solid rgb(0, 0, 0)',
     padding: '7px 36px',
@@ -21,21 +26,22 @@ class List extends Component {
     render() {
 
         const color = this.props.colors.filter((color) => {
-            return color._id === this.props.colorid
+            return color._id === this.props.colorId
         })[0]
 
         return (
 
             <div>
                 <div className="text-center">
-                    <div className="container">
+                    <div className="container" style={containerStyle}>
                         <div className="row">
                             <div className="column col-12">
                                 <FeaturedSwatch
                                     color={color}
                                 />
-                                <container style={flexSimilar}>
+                                <div style={flexSimilar}>
 
+                                    {/* TODO: create script to look for closest match to R G B values */}
                                     <SimilarSwatches
                                         color={color}
                                     />
@@ -52,11 +58,11 @@ class List extends Component {
                                         color={color}
                                     />
 
-                                </container>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <button onClick={this.props.gotoList} style={clearButton}>Clear</button>
+                    <button onClick={this.props.goToList} style={buttonStyle}>Clear</button>
                 </div>
             </div >
         );

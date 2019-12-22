@@ -15,15 +15,13 @@ const defaultProps = {
 
 const paginationStyle = {
     display: 'flex',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    marginTop: '40px'
 }
 
 const liStyle = {
-    padding: '5px'    
-}
-
-const underlineActive = {
-    textDecoration: 'underline' 
+    padding: '10px',
+    fontSize: '.9rem'
 }
 
 class Pagination extends React.Component {
@@ -128,7 +126,8 @@ class Pagination extends React.Component {
         return (
             <ul className="pagination" style={paginationStyle}>
                 {pager.pages.map((page, index) =>
-                    <li style={liStyle} key={index} className={pager.currentPage === page ? 'active underline' : ''}>
+                    <li style={liStyle} key={index} className={pager.currentPage === page ? 'active underline font-weight-bold' : ''}>
+                        {/* eslint-disable-next-line */}
                         <a onClick={() => this.setPage(page)}>{page}</a>
                     </li>
                 )}

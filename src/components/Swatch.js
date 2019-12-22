@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Swatch = ({ color, gotoDetail }) => {
+const Swatch = ({ color, goToDetail }) => {
 
     const liStyle = {
         display: 'block',
-        width: '120px',
+        width: '115px',
         margin: '10px'
     }
 
@@ -16,24 +16,24 @@ const Swatch = ({ color, gotoDetail }) => {
         boxShadow: '#b7b7b7ba 0px 0px 2px 0px'
     }
 
-    const cardTitle = {
+    const cardTitleStyle = {
         height: '40px',
-        lineHeight: '20px',
+        lineHeight: '25px',
         marginBottom: '-1rem'
     }
 
     const cardHeaderStyle = {
         background: `#${color.hex}`,
-        height: '120px',
+        height: '100px',
     };
 
     return (
         
-            <li onClick={()=>(gotoDetail && gotoDetail(color._id))} key={color._id} style={liStyle}>
+            <li onClick={()=>(goToDetail && goToDetail(color._id))} key={color._id} style={liStyle}>
                 <div className="card" style={cardStyle}>
                     <div className="card-header" style={cardHeaderStyle}></div>
                     <div className="">
-                        <p className="card-title" style={cardTitle} >#{color.hex}</p>
+                        <p className="card-title" style={cardTitleStyle} >#{color.hex}</p>
                     </div>
                 </div>
             </li>

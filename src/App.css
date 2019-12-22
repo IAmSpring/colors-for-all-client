@@ -21,10 +21,6 @@ li {
     list-style-type: none;
 }
 
-.logo {
-    max-height: 27px;
-}
-
 .underline {
     text-decoration: underline;
 }

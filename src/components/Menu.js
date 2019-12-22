@@ -1,10 +1,10 @@
 import React from 'react';
 
-const columnMargin = {
+const columnStyle = {
   marginTop: '40px'
 }
 
-const randomButton = {
+const buttonStyle = {
   textAlign: 'center',
   border: '0.5px solid rgb(0, 0, 0)',
   padding: '7px 36px',
@@ -13,12 +13,12 @@ const randomButton = {
   fontWeight: '600'
 }
 
-const menuItems = {
+const categoryStyle = {
   marginLeft: '-20px',
   marginTop: '20px'
 }
 
-const liCategory = {
+const liStyle = {
   paddingBottom: '4px'
 }
 
@@ -32,14 +32,15 @@ class Menu extends React.Component {
 
   render() {
     const categoryItems = this.state.catergories.map((category) =>
-      <li style={liCategory}>{category}</li>
+      <li style={liStyle}>{category}</li>
     );
     return (
-      <div style={columnMargin}>
+      <div style={columnStyle}>
         <div className="text-center">
-          <button style={randomButton} onClick={this.props.gotoRandom}>Random Color</button>
+          <button style={buttonStyle} onClick={this.props.goToRandom}>Random Color</button>
         </div>
-        <ul style={menuItems}>{categoryItems}</ul>
+        {/* TODO: onClick use category to filter list view's colors by category value */}
+        <ul style={categoryStyle}>{categoryItems}</ul>
       </div>
     );
   }

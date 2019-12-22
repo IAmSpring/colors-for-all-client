@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Swatch = ({ color, gotoDetail }) => {
+const Swatch = ({ color, goToDetail }) => {
 
     const featuredStyle = {
         display: 'block',
         width: '100%',
-        marginTop: '8px'
+        marginTop: '10px'
     }
 
     const cardStyle = {
@@ -16,10 +16,10 @@ const Swatch = ({ color, gotoDetail }) => {
 
     const cardHeaderStyle = {
         background: `#${color.hex}`,
-        height: '300px',
+        height: '280px',
     };
 
-    const cardTitle = {
+    const cardTitleStyle = {
         height: '50px',
         lineHeight: '65px',
         fontSize: '1.5rem'
@@ -27,11 +27,11 @@ const Swatch = ({ color, gotoDetail }) => {
 
     return (
         
-            <div onClick={()=>(gotoDetail && gotoDetail(color._id))} key={color._id} style={featuredStyle}>
+            <div onClick={()=>(goToDetail && goToDetail(color._id))} key={color._id} style={featuredStyle}>
                 <div className="card" style={cardStyle}>
                     <div className="card-header" style={cardHeaderStyle}></div>
                     <div className="">
-                        <p className="card-title" style={cardTitle} >#{color.hex}</p>
+                        <p className="card-title" style={cardTitleStyle} >#{color.hex}</p>
                     </div>
                 </div>
             </div>
