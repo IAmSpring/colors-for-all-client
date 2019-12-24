@@ -36,7 +36,7 @@ const FeaturedSwatch = ({ color, goToDetail }) => {
                     <div className="card-header" style={cardHeaderStyle}>
                     </div>
                     <div className="card-body" style={cardBodyStyle}>
-                        <p className="card-title" style={cardTitleStyle} >#{color.hex}</p>
+                        <h5 className="card-title" style={cardTitleStyle} >#{color.hex}</h5>
                     </div>
                 </div>
             </div>

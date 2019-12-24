@@ -41,7 +41,7 @@ class Detail extends Component {
                                 />
                                 <div style={flexSimilar}>
 
-                                    {/* TODO: create script to look for closest match to R G B values */}
+                                    {/* TODO: create script to sort colors by closest match to current color's R G B values and return first five */}
                                     <SimilarSwatches
                                         color={color}
                                     />
