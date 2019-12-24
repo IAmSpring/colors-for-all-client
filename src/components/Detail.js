@@ -21,7 +21,7 @@ const buttonStyle = {
     fontWeight: '600'
 }
 
-class List extends Component {
+class Detail extends Component {
 
     render() {
 
@@ -69,4 +69,4 @@ class List extends Component {
     }
 }
 
-export default List;
+export default Detail;
