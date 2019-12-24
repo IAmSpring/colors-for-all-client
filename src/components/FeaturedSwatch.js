@@ -19,6 +19,10 @@ const FeaturedSwatch = ({ color, goToDetail }) => {
         height: '280px',
     };
 
+    const cardBodyStyle = {
+        padding: '0rem'
+    }
+
     const cardTitleStyle = {
         height: '50px',
         lineHeight: '65px',
@@ -29,8 +33,9 @@ const FeaturedSwatch = ({ color, goToDetail }) => {
         
             <div onClick={()=>(goToDetail && goToDetail(color._id))} key={color._id} style={featuredStyle}>
                 <div className="card" style={cardStyle}>
-                    <div className="card-header" style={cardHeaderStyle}></div>
-                    <div className="">
+                    <div className="card-header" style={cardHeaderStyle}>
+                    </div>
+                    <div className="card-body" style={cardBodyStyle}>
                         <p className="card-title" style={cardTitleStyle} >#{color.hex}</p>
                     </div>
                 </div>
