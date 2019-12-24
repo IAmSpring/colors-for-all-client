@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Swatch = ({ color, goToDetail }) => {
+const FeaturedSwatch = ({ color, goToDetail }) => {
 
     const featuredStyle = {
         display: 'block',
@@ -38,4 +38,4 @@ const Swatch = ({ color, goToDetail }) => {
     )
 }
 
-export default Swatch;
+export default FeaturedSwatch;
