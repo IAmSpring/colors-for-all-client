@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import FeaturedSwatch from './FeaturedSwatch';
 import SimilarSwatches from './SimilarSwatches';
 
@@ -21,7 +21,7 @@ const buttonStyle = {
     fontWeight: '600'
 }
 
-class Detail extends Component {
+class Detail extends React.Component {
 
     render() {
 
