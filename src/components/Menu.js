@@ -23,8 +23,10 @@ const liStyle = {
 }
 
 class Menu extends React.Component {
+
   constructor(props) {
     super(props);
+    
     this.state = {
       catergories: ['Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Purple', 'Brown', 'Gray']
     };

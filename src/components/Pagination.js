@@ -25,11 +25,15 @@ const liStyle = {
 }
 
 class Pagination extends React.Component {
+
     constructor(props) {
         super(props);
-        this.state = { pager: {} };
+        
+        this.state = {
+            pager: {}
+        };
     }
-
+    
     componentWillMount() {
         // set page if items array isn't empty
         if (this.props.items && this.props.items.length) {

@@ -1,18 +1,24 @@
 import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
-import './App.css';
-
 import Navbar from './components/Navbar';
 import Menu from './components/Menu';
 import List from './components/List';
 import Detail from './components/Detail';
+import './App.css';
 
 const columnStyle = {
   marginTop: '30px'
 }
 
 class App extends React.Component {
-  state = { colors: [] }
+
+  constructor(props) {
+    super(props);
+    
+    this.state = {
+      colors: []
+    };
+  }
+
 
   componentDidMount() {
     this.fetchColors();
@@ -72,13 +78,13 @@ class App extends React.Component {
 
     return (
       <div className="App">
-        <Container fluid>
+        <div className="container-fluid">
           <Navbar />
-          <Row>
-            <Col sm={3} className="side-nav">
+          <div className="row">
+            <div className="column col-sm-3 side-nav">
               <Menu goToRandom={this.goToRandom} />
-            </Col>
-            <Col sm={9} style={columnStyle}>
+            </div>
+            <div className="column col-sm-9" style={columnStyle}>
               {!this.state.colorId &&
                 <List
                   colors={this.state.colors}
@@ -93,9 +99,9 @@ class App extends React.Component {
                   goToList={this.goToList}
                 />
               }
-            </Col>
-          </Row>
-        </Container>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
