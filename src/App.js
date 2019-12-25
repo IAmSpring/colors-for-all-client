@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import './App.css';
+
 import Navbar from './components/Navbar';
 import Menu from './components/Menu';
 import List from './components/List';
